@@ -33,4 +33,5 @@ Examples:
     'cosd', 'np', 'sind', 'tand', 'wrap_180', 'wrap_360']
 """
 
-from . import utilities
+from . import cmake
+from . import git
