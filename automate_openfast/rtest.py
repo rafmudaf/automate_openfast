@@ -1,5 +1,6 @@
 import os
 import subprocess
+import shutil
 from multiprocessing import Process, Queue, current_process
 import queue
 import time
@@ -8,6 +9,15 @@ class OpenFASTRegTest():
     def __init__(self, project, binary_name="openfast"):
         self.project = project
         self.binary_name = binary_name
+
+        # Copy the test-case turbine files to the build directory
+        for d in ["5MW_Baseline", "AOC", "AWT27", "SWRT", "UAE_VI", "WP_Baseline"]:
+            data_directory = os.path.join(self.project.build_directory, d)
+            if not os.path.isdir(data_directory):
+                shutil.copytree(
+                    os.path.join(self.project.project_directory, "reg_tests", "r-test", "glue-codes", "openfast", d),
+                    data_directory
+                )
 
     def execute_case(self, case_name):
         os.chdir(os.path.join(self.project.project_directory, "reg_tests"))
