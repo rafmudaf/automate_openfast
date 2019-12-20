@@ -23,6 +23,7 @@ class CMakeProject():
         other initial files for the build system.
 
         cmake_generator (Str): The generator type; typically one of
+
             - Unix Makefiles
             - Visual Studio 14 2015
             - Visual Studio 15 2017
@@ -31,6 +32,7 @@ class CMakeProject():
         architecture (Str): The architecture type for the build; typically
             left empty to use the default for the system. For Visual Studio
             generators, this would by one of
+
                 - "Win32" for 32 bit
                 - "x64" for 64 bit
         
@@ -54,6 +56,7 @@ class CMakeProject():
         """
         target (Str): One of the build targets included in the CMake project;
             typically one of
+
             - "openfast" on any platform
             - "all" on any platform
             - "install" on any platform
@@ -61,6 +64,7 @@ class CMakeProject():
             - "test" on any platform to run the full test suite
         
         cmake_build_type (Str): One of
+
             - Release
             - RelWithDebInfo
             - MinSizeRel
