@@ -5,13 +5,20 @@ from automate_openfast.rtest import OpenFASTRegTest
 
 project_url = "https://github.com/rafmudaf/openfast"
 git_branch = "dev"
-project_directory = "/Users/rmudafor/Desktop/openfast_raf"
+project_directory = "/Users/rmudafor/Desktop/openfast" # "c:/Users/rmudafor/Desktop/openfast"
 
 openfast_repo = Repo(project_url, project_directory)
 openfast_repo.clone(branch=git_branch, force=True)
 
 openfast_cmake = CMakeProject(project_directory, clean=True)
-openfast_cmake.initialize(cmake_flags=["-DBUILD_TESTING=ON"])
+openfast_cmake.initialize(
+    # cmake_generator="Visual Studio 15 2017 Win64",
+    cmake_flags=[
+        "-DBUILD_TESTING=ON",
+        # "-DCTEST_OPENFAST_EXECUTABLE=C:/Users/rmudafor/Desktop/openfast_226/install/bin/beamdyn_driver.exe",
+        # "-DCTEST_BEAMDYN_EXECUTABLE=C:/Users/rmudafor/Desktop/openfast_226/install/bin/openfast.exe"
+    ],
+)
 openfast_cmake.build(cmake_build_type="Release", cmake_target="install")
 
 rtest = OpenFASTRegTest(openfast_cmake)
