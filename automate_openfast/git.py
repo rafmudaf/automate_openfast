@@ -12,8 +12,9 @@ class Repo():
     def clone(self, branch="master", force=False):
         if os.path.isdir(self.local_directory) and not force:
             raise FileExistsError
+        elif os.path.isdir(self.local_directory) and force:
+            shutil.rmtree(self.local_directory, ignore_errors=force)
 
-        shutil.rmtree(self.local_directory, ignore_errors=force)
         subprocess.run(
             [
                 "git",
