@@ -25,9 +25,9 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'TEMPLATE'
-DESCRIPTION = 'A template Python project.'
-URL = 'https://github.com/rafmudaf/python_template'
+NAME = 'autoFAST'
+DESCRIPTION = 'Automation tools for OpenFAST.'
+URL = 'https://github.com/rafmudaf/automate_openfast'
 EMAIL = 'rafael.mudafort@nrel.gov'
 AUTHOR = 'NREL National Wind Technology Center'
 REQUIRES_PYTHON = '>=3.3.0'
