@@ -5,7 +5,10 @@ from automate_openfast.rtest import OpenFASTRegTest
 
 project_url = "https://github.com/rafmudaf/openfast"
 git_branch = "dev"
-project_directory = "/Users/rmudafor/Desktop/openfast" # "c:/Users/rmudafor/Desktop/openfast"
+
+# project_directory = "c:/Users/rmudafor/Desktop/openfast"  # Windows
+# project_directory = "/home/rmudafor/Desktop/openfast"     # Eagle
+project_directory = "/Users/rmudafor/Desktop/openfast"    # MBP
 
 openfast_repo = Repo(project_url, project_directory)
 openfast_repo.clone(branch=git_branch, force=True)
