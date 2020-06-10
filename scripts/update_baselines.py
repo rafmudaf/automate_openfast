@@ -55,6 +55,7 @@ if __name__ == '__main__':
         "5MW_OC3Spar_DLL_WTurb_WavesIrr",
         "5MW_OC4Semi_WSt_WavesWN",
         "5MW_Land_BD_DLL_WTurb",
+        "5MW_OC4Jckt_ExtPtfm",
         "WP_Stationary_Linear",
         "Ideal_Beam_Fixed_Free_Linear",
         "Ideal_Beam_Free_Free_Linear",
