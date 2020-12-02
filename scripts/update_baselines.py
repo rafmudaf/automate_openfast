@@ -54,12 +54,15 @@ if __name__ == '__main__':
         "5MW_TLP_DLL_WTurb_WavesIrr_WavesMulti",
         "5MW_OC3Spar_DLL_WTurb_WavesIrr",
         "5MW_OC4Semi_WSt_WavesWN",
-        "5MW_Land_BD_DLL_WTurb",
         "5MW_OC4Jckt_ExtPtfm",
+        "5MW_Land_BD_DLL_WTurb",
+        "5MW_Land_BD_Linear",
         "WP_Stationary_Linear",
         "Ideal_Beam_Fixed_Free_Linear",
         "Ideal_Beam_Free_Free_Linear",
-        "5MW_Land_BD_Linear"
+        "HelicalWake_OLAF",
+        "EllipticalWing_OLAF",
+        "IEA_LB_RWT-AeroAcoustics"
     ]
     rtest.execute_case_list(case_list)
 
