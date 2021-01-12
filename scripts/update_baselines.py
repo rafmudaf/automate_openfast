@@ -16,11 +16,14 @@ if __name__ == '__main__':
 
     openfast_cmake = CMakeProject(project_directory) #, clean=True)
     openfast_cmake.initialize(
-        # cmake_generator="Visual Studio 15 2017 Win64",
+        # cmake_generator="NMake Makefiles",
         cmake_flags=[
             "-DBUILD_TESTING=ON",
-            # "-DCTEST_OPENFAST_EXECUTABLE={}/install/bin/beamdyn_driver.exe".format(project_directory),
-            # "-DCTEST_BEAMDYN_EXECUTABLE={}/install/bin/openfast.exe".format(project_directory)
+            # "-DCTEST_OPENFAST_EXECUTABLE={}/build/glue-codes/openfast/openfast.exe".format(project_directory),
+            # "-DCTEST_AERODYN_EXECUTABLE={}/build/modules/aerodyn/aerodyn_driver.exe".format(project_directory),
+            # "-DCTEST_BEAMDYN_EXECUTABLE={}/build/modules/beamdyn/beamdyn_driver.exe".format(project_directory),
+            # "-DCTEST_HYDRODYN_EXECUTABLE={}/build/modules/hydrodyn/hydrodyn_driver.exe".format(project_directory),
+            "-DCMAKE_BUILD_TYPE=RELEASE"
         ],
     )
     openfast_cmake.build(cmake_build_type="Release", cmake_target="install")
@@ -57,6 +60,7 @@ if __name__ == '__main__':
         "5MW_OC4Jckt_ExtPtfm",
         "5MW_Land_BD_DLL_WTurb",
         "5MW_Land_BD_Linear",
+        "5MW_OC4Semi_Linear",
         "WP_Stationary_Linear",
         "Ideal_Beam_Fixed_Free_Linear",
         "Ideal_Beam_Free_Free_Linear",
