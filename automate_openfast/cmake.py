@@ -27,6 +27,7 @@ class CMakeProject():
             - Unix Makefiles
             - Visual Studio 14 2015
             - Visual Studio 15 2017
+            - NMake Makefiles
             - Xcode
         
         architecture (Str): The architecture type for the build; typically
@@ -41,6 +42,7 @@ class CMakeProject():
         """
         os.chdir(self.build_directory)
         command = ["cmake", self.project_directory]
+        self.cmake_generator = cmake_generator
         if cmake_generator:
             command += ["-G" + cmake_generator]
         if cmake_architecture:
@@ -74,9 +76,13 @@ class CMakeProject():
         command = [
             "cmake",
             "--build",
-            ".",
-            "--config", cmake_build_type
+            "."
         ]
+
+        # Apply the build config target for Visual Studio generators
+        if "visual" in self.cmake_generator.lower():
+            command += ["--config", cmake_build_type]
+
         if cmake_target:
             command += ["--target", cmake_target]
         subprocess.run(command, check=True)
