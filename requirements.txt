@@ -1,4 +1,4 @@
 # Requirements list
-numpy==1.16.3
-scipy==1.1.0
-pytest==5.1.1
+numpy
+scipy
+pytest
