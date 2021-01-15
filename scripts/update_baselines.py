@@ -8,6 +8,7 @@ if __name__ == '__main__':
     git_branch = "dev"
 
     # project_directory = "c:/Users/rmudafor/Desktop/openfast"  # Windows
+    # project_directory = "/home/rmudafor/openfast"             # WSL
     # project_directory = "/home/rmudafor/Desktop/openfast"     # Eagle
     project_directory = "/Users/rmudafor/Desktop/openfast"    # MBP
 
