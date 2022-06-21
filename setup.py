@@ -35,7 +35,7 @@ VERSION = '0.1.0'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'numpy==1.16.3',
+    'numpy==1.22.0',
     'scipy==1.1.0',
     'pytest==5.1.1'
 ]
