@@ -37,7 +37,7 @@ VERSION = '0.1.0'
 REQUIRED = [
     'numpy==1.22.0',
     'scipy==1.10.0',
-    'pytest==5.1.1'
+    'pytest==9.0.3'
 ]
 
 # What packages are optional?
